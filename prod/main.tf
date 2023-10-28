@@ -12,8 +12,6 @@ terraform {
 }
 
 provider "google" {
-  credentials = file("gcp_key.json")
-
   project = "digger-landing"
   region  = "us-central1"
   zone    = "us-central1-c"

@@ -17,10 +17,11 @@ jobs:
       uses: 'google-github-actions/auth@v1'
       with:
         credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
+        create_credentials_file: true
     - name: 'Set up Cloud SDK'
       uses: 'google-github-actions/setup-gcloud@v1'
-    - name: 'Set up ADC with gcloud CLI'
-      run: 'gcloud auth application-default login --quiet'
+    - name: 'Use gcloud CLI'
+      run: 'gcloud info'
     - name: digger run
       uses: diggerhq/digger@v0.2.0
       env:
